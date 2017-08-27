@@ -1,0 +1,6 @@
+framework module Pods_caf_ios {
+  umbrella header "Pods-caf_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

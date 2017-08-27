@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireActivityLogger (2.3.0):
+    - Alamofire (~> 4.2)
+  - Kingfisher (3.6.2)
+  - NSObject+Rx (2.1.0):
+    - RxSwift
+  - NVActivityIndicatorView (3.6.1)
+  - ObjectMapper (2.2.7)
+  - Reachability (3.2)
+  - RxAlamofire (3.0.2):
+    - RxAlamofire/Core (= 3.0.2)
+  - RxAlamofire/Core (3.0.2):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0)
+  - RxCocoa (3.4.0):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.0)
+  - RxSwiftUtilities (1.0.1):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - Swinject (2.1.0)
+  - Then (2.1.0)
+  - Toaster (2.0.3)
+  - Toucan (0.6.0)
+  - Validator (2.1.1)
+
+DEPENDENCIES:
+  - AlamofireActivityLogger
+  - Kingfisher
+  - NSObject+Rx
+  - NVActivityIndicatorView
+  - ObjectMapper
+  - Reachability
+  - RxAlamofire
+  - RxCocoa
+  - RxSwiftUtilities
+  - Swinject
+  - Then
+  - Toaster
+  - Toucan
+  - Validator
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireActivityLogger: a4a4b897a179c515e083a01f93b1a834f79d7091
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
+  RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
+  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  RxSwiftUtilities: 57e77c17b885931c37aa038f114f14fd1f478ac2
+  Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
+  Then: 8496793c8fcac95482b943909b440724c7d8d82c
+  Toaster: 77c0b03d78e680bbbab0071c9c7ee392b0034010
+  Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
+  Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
+
+PODFILE CHECKSUM: 77655aec013f6253d5ee37deaf9ae395a97f1eb9
+
+COCOAPODS: 1.2.1
