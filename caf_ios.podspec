@@ -8,7 +8,7 @@ s.summary = "CAF_iOS is a common application framework written in Swift for inte
 s.requires_arc = true
 
 # 2
-s.version = "0.0.8"
+s.version = "0.0.9"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }

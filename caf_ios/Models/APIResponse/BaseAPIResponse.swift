@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 public protocol APIResponseType {
-    var errors : [APIErrorType]? {get set}
+    var errors : [APIErrorType]? {get}
     var dataAsString : String? {get set}
     
     func isError() -> Bool
@@ -19,13 +19,10 @@ public protocol APIResponseType {
 
 open class BaseAPIResponse : Mappable, APIResponseType {
     
-    var _errors : [APIErrorType]?
+    var _errors : [BaseAPIError]?
     public var errors : [APIErrorType]? {
         get {
             return _errors
-        }
-        set {
-            _errors = newValue
         }
     }
     public var dataAsString : String?
@@ -33,11 +30,10 @@ open class BaseAPIResponse : Mappable, APIResponseType {
     public var paging : Pagination?
     
     required public init? (map: Map) {
-        
     }
     
     open func mapping(map: Map) {
-        errors          <- map["errors"]
+        _errors          <- map["errors"]
         dataAsString    <- map["data"]
         paging          <- map["pagination"]
     }
