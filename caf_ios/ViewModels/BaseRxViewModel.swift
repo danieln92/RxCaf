@@ -116,7 +116,29 @@ open class RxBaseViewModel {
                 case .successWithPaging(let data, let paging) :
                     return Observable.just((data,paging))
                 case .failure(let e):
+                    if e.code == 401 {
+                        self.unauthorized.onNext(())
+                    }
                     self.showToast.onNext(e.localizedDescription)
+                default:
+                    break
+                }
+                return Observable.never()
+        }
+    }
+    
+    public func flatMapRxResultWithPaging<T>(_ observable : Observable<RxResult<T>>, errorHandler: @escaping ((_ error:Error) -> ()) ) -> Observable<(T,PaginationType)> {
+        return observable.observeOn(MainScheduler.instance)
+            .flatMapLatest { result -> Observable<(T,PaginationType)> in
+                switch result {
+                case .successWithPaging(let data, let paging) :
+                    return Observable.just((data,paging))
+                case .failure(let e):
+                    if e.code == 401 {
+                        self.unauthorized.onNext(())
+                    } else {
+                        errorHandler(e)
+                    }
                 default:
                     break
                 }
