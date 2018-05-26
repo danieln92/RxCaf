@@ -44,7 +44,7 @@ public extension RxViewModelType {
     }
 }
 
-open class RxBaseViewModel {
+open class RxBaseViewModel : NSObject {
     public let serviceContainer = ServiceContainer.sharedInstance
     
     private var showToast = PublishSubject<String>()
@@ -59,7 +59,8 @@ open class RxBaseViewModel {
         disposeBag = nil
     }
     
-    public init() {
+    public override init() {
+        super.init()
         showToast.subscribeOn(MainScheduler.instance)
             .subscribe(onNext : { [unowned self] message in
                 self.serviceContainer.getResolver().resolve(ToastManagerType.self)?.show(message)
@@ -101,9 +102,8 @@ open class RxBaseViewModel {
                 case .failure(let e):
                     if e.code == 401 {
                         self.unauthorized.onNext(())
-                    } else {
-                        errorHandler(e)
                     }
+                    errorHandler(e)
                 }
                 return Observable.never()
         }
@@ -136,9 +136,8 @@ open class RxBaseViewModel {
                 case .failure(let e):
                     if e.code == 401 {
                         self.unauthorized.onNext(())
-                    } else {
-                        errorHandler(e)
                     }
+                    errorHandler(e)
                 default:
                     break
                 }
